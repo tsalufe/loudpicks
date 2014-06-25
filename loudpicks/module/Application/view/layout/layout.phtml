@@ -1,0 +1,61 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle('LoudPicks -'. $this->translate('Get your loudest stock pick that will explode!'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/png', 'href' => $this->basePath() . '/img/cw-financials-logo.png'))
+                        ->prependStylesheet($this->basePath() . '/css/style.css')
+                        ->prependStylesheet($this->basePath() . '/css/bootstrap-theme.min.css')
+                        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css') ?>
+
+        <!-- Scripts -->
+        <?php echo $this->headScript()
+            ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+            ->prependFile($this->basePath() . '/js/jquery.min.js')
+            ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
+        ; ?>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="<?php echo $this->url('home') ?>"><img src="<?php echo $this->basePath('img/cw-financials-logo.png') ?>" alt="modified on Zend Framework 2"/>&nbsp;<?php echo 'LoudPicks, CW Financials'; ?></a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="<?php echo $this->url('home') ?>" title="<?php echo $this->translate('Who are we?') ?>"><?php echo $this->translate('About Us') ?></a></li>
+                        <li><a href="<?php echo $this->url('hotpicks') ?>" title="<?php echo $this->translate('Hot stocks in the market') ?>"><?php echo $this->translate('Hot Stocks') ?></a></li>
+                        <li><a href="<?php echo $this->url('loudpicks') ?>" title="<?php echo $this->translate('Our stock picks that we believe will explode loud.') ?>"><?php echo $this->translate('Loud Picks') ?></a></li>
+			<li><a href="<?php echo $this->url('monitor') ?>" title="<?php echo $this->translate('Want us to monitor your picks and to alert you of safe entrance or immediate exit?') ?>"><?php echo $this->translate('Monitor & Alerts') ?></a></li>
+			<li><a href="<?php echo $this->url('evaluate') ?>" title="<?php echo $this->translate('Evalute your picks, find the target prices and stop loss prices') ?>"><?php echo $this->translate('Evaluate My Picks') ?></a></li>
+			<li><a href="<?php echo $this->url('account') ?>" title="<?php echo $this->translate('Get more loud picks, learn our strategy, manage your profile, change stock alerts, and more!') ?>"><?php echo $this->translate('Account') ?></a></li>
+			<li><a href="<?php echo $this->url('blog') ?>" title="<?php echo $this->translate('See whats up in there') ?>"><?php echo $this->translate('Blog') ?></a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div class="container">
+            <?php echo $this->content; ?>
+            <hr>
+            <footer>
+                <p>&copy; 2014 - <?php echo date('Y') ?> by CW Financials Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
+            </footer>
+        </div> <!-- /container -->
+        <?php echo $this->inlineScript() ?>
+    </body>
+</html>

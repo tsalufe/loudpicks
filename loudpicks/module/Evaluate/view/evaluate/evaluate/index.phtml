@@ -1,0 +1,11 @@
+<?php
+?>
+	<script type='text/javascript' src='/js/candlestick.js'></script>
+	<div class='col-md-12 cols-sm-12'>
+		<canvas id='evaluate-canvas' width='1000' height='500'>
+			Your browser does not support HTML5 canvas tag.
+		</canvas>
+	</div>
+	<script type='text/javascript'>
+		var CsPlot=new CandlestickPlots('tsla',document.getElementById('evaluate-canvas'));
+	</script>
